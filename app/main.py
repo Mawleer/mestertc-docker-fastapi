@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Request
+from fastapi.responses import HTMLResponse
 
 app = FastAPI()
 
@@ -10,6 +11,12 @@ def read_root():
 def read_Ip(request: Request):
     
     return {"ip": request.client.host}
+
+@app.get("/ip",response_class=HTMLResponse)
+def read_Ip(request: Request):
+    
+    return (f"<h2>ip: {request.client.host}</h2>")
+
 
 @app.get("/items/{id}")
 def read_item(item_id: int, q: str = None):
