@@ -12,20 +12,7 @@ app.add_middleware(CORSMiddleware,
     allow_headers=["*"],
 )
 
-rooms={
-        "room1": {
-            "name": "Room 1",
-            "description": "This is the single bed room."
-        },
-        "room2": {
-            "name": "Room 2",
-            "description": "This is the double bed room."
-        },
-        "room3": {
-            "name": "Room 3",
-            "description": "This is the third room."
-    }
-    }
+
 
 @app.get("/")
 def read_root():
@@ -42,6 +29,22 @@ def read_item(item_id: int, q: str = None):
     return {"id": id, "q": q}
 
 
+rooms=[
+        {
+            "name": "Room 1",
+            "description": "This is the single bed room."
+        },
+      {
+            "name": "Room 2",
+            "description": "This is the double bed room."
+        },
+       {
+            "name": "Room 3",
+            "description": "This is the third room."
+    }
+    ]
+
+
 @app.get("/rooms")
-def read_rooms(rooms: dict = rooms):
+def read_rooms():
     return {"rooms": rooms}
