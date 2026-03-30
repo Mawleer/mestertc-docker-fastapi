@@ -1,0 +1,29 @@
+
+
+@apiURL=https://fw-teaching.fi/demo/wdbocms/api/v1/products/
+
+### Get all products
+GET {{apiURL}}
+
+#### Get product by id
+GET {{apiURL}}1004
+
+###Create new product
+POST {{apiURL}}
+Content-Type: application/json
+
+{
+  "name": "Coat",
+  "price": 100
+}
+
+### Delete product by id
+DELETE {{apiURL}}1005
+
+#### Update product by id
+PATCH  {{apiURL}}1004
+Content-Type: application/json
+
+{
+  "price": 100
+}   

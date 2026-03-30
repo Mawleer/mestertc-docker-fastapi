@@ -1,0 +1,3 @@
+### Get IP address
+GET https://mestertc-docker-fastapi-mestertc-proj.2.rahtiapp.fi/api/ip
+
