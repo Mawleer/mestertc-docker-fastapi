@@ -1,2 +1,15 @@
+@apiURL=http://localhost:8080
+
 ### Get rooms
-GET http://localhost:8080/rooms
+GET {{apiURL}}/rooms
+
+### Get BOOKINGS
+GET {{apiURL}}/bookings
+
+### Create booking
+POST {{apiURL}}/bookings
+Content-Type: application/json
+
+{
+    "room_id": 1,
+}

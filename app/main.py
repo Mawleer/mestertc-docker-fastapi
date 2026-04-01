@@ -31,16 +31,19 @@ def read_item(item_id: int, q: str = None):
 
 rooms=[
         {
-            "name": "Room 1",
-            "description": "This is the single bed room."
+            "name": "201",
+            "description": "This is the single bed room.",
+            "price": "100"
         },
       {
-            "name": "Room 2",
-            "description": "This is the double bed room."
+            "name": "202",
+            "description": "This is the double bed room.",
+            "price": "150"      
         },
        {
-            "name": "Room 3",
-            "description": "This is the third room."
+            "name": "203",
+            "description": "This is the third room.",
+            "price": "80"
     }
     ]
 
@@ -48,3 +51,9 @@ rooms=[
 @app.get("/rooms")
 def read_rooms():
     return {"rooms": rooms}
+
+
+@app.post("/bookings")
+def create_booking():
+    #skapa bokning i DB
+    return {"msg": "Booking created"}
